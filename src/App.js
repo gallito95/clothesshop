@@ -1,40 +1,21 @@
-import './components/categoryItem/categoryItem'
-import Categorymenu from './components/directory/categoryMenu';
-const App = () => {
+import Home from "./Routes/Home/homeComponent";
+import {Routes,Route} from "react-router-dom"
+import Navigation from "./Routes/Navigation/navigationComponent";
+import Shop from "./Routes/Tets/Shop";
+import SignIn from './Routes/sign-in/signInComponent'
 
-  const categories = [
-    {
-      "id": 1,
-      "title": "hats",
-      "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
-    },
-    {
-      "id": 2,
-      "title": "jackets",
-      "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
-    },
-    {
-      "id": 3,
-      "title": "sneakers",
-      "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
-    },
-    {
-      "id": 4,
-      "title": "womens",
-      "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
-    },
-    {
-      "id": 5,
-      "title": "mens",
-      "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
-    }
-  ]
+const App = () => {
+ 
+  
   return (
-    <div className="categories-container">
-      <Categorymenu
-       categories = {categories}
-      />  
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation/>}>
+      <Route index element={<Home/> }/> 
+      <Route path="shop" element={<Shop/>}/>        
+      <Route path="sign-in" element={<SignIn/>}/>        
+      </Route>    
+      
+    </Routes>
   );
 }
 
